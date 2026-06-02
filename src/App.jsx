@@ -8,7 +8,6 @@ import Promo from './components/Promo'
 import Clientes from './components/Clientes'
 import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
-import ApiTest from './components/ApiTest'
 
 function App() {
   const [carrito, setCarrito] = useState([])
@@ -35,7 +34,6 @@ function App() {
           />
 
           <Hero />
-          <ApiTest />
           <Nosotros />
 
           <Paquetes
