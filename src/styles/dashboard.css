@@ -1,0 +1,315 @@
+/* =========================================
+    BOTÓN LOGIN
+========================================= */
+.btn-login{
+    background-color: var(--turquesa);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s ease;
+}
+
+.btn-login:hover{
+    transform: translateY(-2px);
+    background-color: #36b49d;
+}
+
+/* =========================================
+    MODAL LOGIN
+========================================= */
+.modal-login{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+    padding: 20px;
+}
+
+.modal-login.activo{
+    display: flex;
+}
+
+.login-box{
+    width: 100%;
+    max-width: 420px;
+    background-color: white;
+    padding: 45px;
+    border-radius: 20px;
+    position: relative;
+    animation: aparecer .3s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cerrar-login{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.login-box h2{
+    color: var(--azul);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.login-box p{
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.login-box input{
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.btn-dashboard{
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--azul);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s ease;
+    margin-bottom: 14px;
+}
+
+.btn-dashboard:hover{
+    background-color: #004f9d;
+}
+
+.cliente-btn{
+    background-color: var(--coral);
+}
+
+.cliente-btn:hover{
+    background-color: #e76f47;
+}
+
+/* =========================================
+    DASHBOARD
+========================================= */
+.dashboard{
+    position: fixed;
+    inset: 0;
+    background-color: #f4f6f9;
+    display: none;
+    z-index: 6000;
+}
+
+.dashboard.activo{
+    display: flex;
+}
+
+/* =========================================
+    SIDEBAR
+========================================= */
+.sidebar{
+    width: 280px;
+    background-color: var(--azul);
+    color: white;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo{
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--turquesa);
+}
+
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar li{
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.sidebar li:hover{
+    background-color: rgba(255,255,255,.1);
+}
+
+.sidebar li.activo{
+    background-color: rgba(255,255,255,.15);
+}
+
+/* =========================================
+    CONTENIDO
+========================================= */
+.dashboard-content{
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.dashboard-header{
+    margin-bottom: 35px;
+}
+
+.dashboard-header h1{
+    font-size: 2.5rem;
+    color: var(--azul);
+    margin-bottom: 8px;
+}
+
+.dashboard-header p{
+    color: #666;
+}
+
+/* =========================================
+    CARDS
+========================================= */
+.dashboard-cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card-dashboard{
+    background-color: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.card-dashboard h3{
+    color: #666;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.card-dashboard span{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--azul);
+}
+
+/* =========================================
+    TABLA
+========================================= */
+.tabla-container{
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.tabla-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.tabla-header h2{
+    color: var(--azul);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead{
+    background-color: #f3f3f3;
+}
+
+th{
+    padding: 18px;
+    text-align: left;
+    color: var(--azul);
+}
+
+td{
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.acciones{
+    display: flex;
+    gap: 10px;
+}
+
+.acciones button{
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--turquesa);
+    color: white;
+}
+
+.acciones button:last-child{
+    background-color: var(--coral);
+}
+
+/* =========================================
+    RESPONSIVE
+========================================= */
+@media(max-width: 992px){
+
+    .dashboard{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        width: 100%;
+    }
+
+    .dashboard-cards{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 768px){
+
+    .dashboard-content{
+        padding: 20px;
+    }
+
+    .tabla-container{
+        overflow-x: auto;
+    }
+
+    table{
+        min-width: 700px;
+    }
+
+    .login-box{
+        padding: 30px;
+    }
+}
