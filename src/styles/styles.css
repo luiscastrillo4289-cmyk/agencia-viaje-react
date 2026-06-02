@@ -272,7 +272,7 @@ ul {
 .hero {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 25, 45, 0.35), rgba(0, 20, 35, 0.35)),
-        url("img/hero.jpg") center/cover no-repeat;
+        url("/img/hero.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -526,7 +526,7 @@ ul {
 ========================= */
 .footer-top-image {
     height: 220px;
-    background: url("img/footer-bg.jpg") center/cover no-repeat;
+    background: url("/img/footer-bg.jpg") center/cover no-repeat;
 }
 
 .site-footer {
