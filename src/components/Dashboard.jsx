@@ -5,7 +5,7 @@ function Dashboard({ cerrarDashboard }) {
 
   useEffect(() => {
     async function obtenerPaquetes() {
-      const respuesta = await fetch('http://localhost:5000/api/paquetes')
+      const respuesta = await fetch('https://agencia-viaje-react.onrender.com/api/paquetes')
       const datos = await respuesta.json()
 
       setPaquetes(datos)

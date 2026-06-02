@@ -8,24 +8,32 @@ function LoginModal({ cerrarLogin, abrirDashboard }) {
   async function iniciarSesion(e) {
     e.preventDefault()
 
-    const respuesta = await fetch('http://localhost:5000/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email,
-        password
-      })
-    })
+    try {
+      const respuesta = await fetch(
+        'https://agencia-viaje-react.onrender.com/api/auth/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email,
+            password
+          })
+        }
+      )
 
-    const datos = await respuesta.json()
+      const datos = await respuesta.json()
 
-    if (datos.ok) {
-      cerrarLogin()
-      abrirDashboard()
-    } else {
-      setMensaje(datos.mensaje)
+      if (datos.ok) {
+        cerrarLogin()
+        abrirDashboard()
+      } else {
+        setMensaje(datos.mensaje || 'Credenciales incorrectas')
+      }
+    } catch (error) {
+      console.error(error)
+      setMensaje('Error al conectar con el servidor')
     }
   }
 
